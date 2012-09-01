@@ -17,7 +17,7 @@
 */
 OpenLayers.ILikeOSM = OpenLayers.Class(OpenLayers.Control, {
 	/**
-	* Property: position
+	* Property: languages
 	*/
 	languages: {},
 	/**
@@ -54,14 +54,9 @@ OpenLayers.ILikeOSM = OpenLayers.Class(OpenLayers.Control, {
 	shareDiv: null,
 
     /**
-	* Property: position
+	* Property: buttons
 	*/
     buttons: null,
-    
-    /**
-	* Property: position
-	*/
-    position: null,
 
     /**
 	* Property: uuid
@@ -96,8 +91,6 @@ OpenLayers.ILikeOSM = OpenLayers.Class(OpenLayers.Control, {
 	*
 	*/
     initialize: function(element) {    	
-        this.position = new OpenLayers.Pixel(OpenLayers.ILikeOSM.X,
-                                             OpenLayers.ILikeOSM.Y);
 		OpenLayers.Control.prototype.initialize.apply(this, arguments);
 		//Set UUID
 		this.uuid = this.getUUID();
@@ -282,7 +275,7 @@ OpenLayers.ILikeOSM = OpenLayers.Class(OpenLayers.Control, {
 		var lonlat = this.map.getLonLatFromPixel(pixel);
 		OpenLayers.ILikeOSM.callbackShareMapView = function(response) { callback(response, iLikeOSM) };
 		this.sharePopUp = new OpenLayers.Popup("iLike OpenStreetMap",
-			lonlat, sz, "<span style=\"font-family:Verdana; font-size: 12px;\"><b>ILike OpenStreetMap Feature Plugin</b><br/><br/>"
+			lonlat, sz, "<span style=\"font-family:Verdana; font-size: 12px;\"><b>I Like OpenStreetMap Feature Plugin</b><br/><br/>"
 			+this.getTextForLikeDiv('MessageText')+"<br/><br/>"
 			+"<INPUT type=\"button\" value=\""+this.getTextForLikeDiv('CheckboxYesText')+"\" onClick=\"OpenLayers.ILikeOSM.callbackShareMapView('true'); return false;\" name=\"buttonYes\"> <INPUT type=\"button\" value=\""+this.getTextForLikeDiv('CheckboxNoText')+"\" onClick=\"OpenLayers.ILikeOSM.callbackShareMapView('false'); return false;\" name=\"buttonNo\"></span>", true);
     	this.map.addPopup(this.sharePopUp);
@@ -416,15 +409,3 @@ OpenLayers.ILikeOSM = OpenLayers.Class(OpenLayers.Control, {
     
     CLASS_NAME: "OpenLayers.ILikeOSM"
 });
-
-/**
-* Constant: X
-* {Integer}
-*/
-OpenLayers.ILikeOSM.X = 70;
-
-/**
-* Constant: Y
-* {Integer}
-*/
-OpenLayers.ILikeOSM.Y = 15;
