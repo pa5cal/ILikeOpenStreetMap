@@ -142,12 +142,12 @@ OpenLayers.ILikeOSM = OpenLayers.Class(OpenLayers.Control, {
         this.thumbsTextDiv.id = this.id + "_thumbsTextDiv";
         OpenLayers.Element.addClass(this.thumbsDiv, "_thumbsTextDiv");
         this.thumbsTextDiv.style.marginLeft = (sz.w*2+10)+'px';
-   		this.thumbsTextDiv.style.marginTop = '3px';
-  		this.thumbsTextDiv.style.paddingBottom = '10px';
-		this.thumbsTextDiv.style.fontSize = '11px';
-		this.thumbsTextDiv.style.fontWeight = "bold";
-		this.thumbsTextDiv.style.fontFamily = "Verdana";
-		this.thumbsTextDiv.innerHTML = this.getTextForLikeDiv('ThumbsText'), 
+        this.thumbsTextDiv.style.marginTop = '3px';
+        this.thumbsTextDiv.style.paddingBottom = '10px';
+        this.thumbsTextDiv.style.fontSize = '11px';
+        this.thumbsTextDiv.style.fontWeight = "bold";
+        this.thumbsTextDiv.style.fontFamily = "Verdana";
+        this.thumbsTextDiv.innerHTML = this.getTextForLikeDiv('ThumbsText');
         
         // Add counter/share map view text
         this.counterDiv = document.createElement("div");
